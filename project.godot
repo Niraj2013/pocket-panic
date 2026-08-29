@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="PocketPanic"
+run/main_scene="uid://be6cdyrej6kbt"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
