@@ -1,3 +1,67 @@
 [gd_scene format=3 uid="uid://cos1t8i1orhai"]
 
+[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="1_c7xwe"]
+[ext_resource type="Texture2D" uid="uid://7d47rqwm06iw" path="res://Lives.jpeg" id="2_2fcgv"]
+[ext_resource type="Script" uid="uid://c4ed87prfcdeu" path="res://Scenes/timer_screen.gd" id="3_qnqh0"]
+
 [node name="LevelScene" type="Node2D" unique_id=1281737210]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1799327021]
+offset_left = -3.000061
+offset_top = 2.0000916
+offset_right = 1373.0
+offset_bottom = 770.0001
+scale = Vector2(0.83663774, 0.844721)
+texture = ExtResource("1_c7xwe")
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=110578155]
+offset_left = 187.0
+offset_top = 48.00003
+offset_right = 3404.8726
+offset_bottom = 405.00003
+scale = Vector2(0.096641004, 0.12770323)
+
+[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1870745884]
+layout_mode = 2
+texture = ExtResource("2_2fcgv")
+
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1656711474]
+layout_mode = 2
+texture = ExtResource("2_2fcgv")
+
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1354680058]
+layout_mode = 2
+texture = ExtResource("2_2fcgv")
+
+[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=2120948853]
+layout_mode = 2
+texture = ExtResource("2_2fcgv")
+
+[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=310234251]
+layout_mode = 2
+texture = ExtResource("2_2fcgv")
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1520688575]
+offset_left = 651.0
+offset_top = 109.0
+offset_right = 678.1708
+offset_bottom = 134.74292
+scale = Vector2(2.5287802, 1.9989492)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 17
+text = "0.0"
+scroll_active = false
+script = ExtResource("3_qnqh0")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=995252443]
+offset_left = 460.0
+offset_top = 111.00001
+offset_right = 520.26404
+offset_bottom = 139.52759
+scale = Vector2(1.990379, 1.5222833)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 17
+text = "Level#"
+scroll_active = false
