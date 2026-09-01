@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://cos1t8i1orhai"]
 
 [ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="1_c7xwe"]
-[ext_resource type="Texture2D" uid="uid://41abeo3uhmnj" path="res://Lives.png" id="3_c7xwe"]
-[ext_resource type="Script" uid="uid://cn6vae8fvlxms" path="res://Scenes/timer_screen.gd" id="3_qnqh0"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fcgv"]
+[ext_resource type="Texture2D" uid="uid://7d47rqwm06iw" path="res://Lives.jpeg" id="2_2fcgv"]
+[ext_resource type="Script" uid="uid://c4ed87prfcdeu" path="res://Scenes/timer_screen.gd" id="3_qnqh0"]
 
 [node name="LevelScene" type="Node2D" unique_id=1281737210]
-script = ExtResource("3_qnqh0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1799327021]
 offset_left = -3.000061
@@ -26,35 +23,36 @@ scale = Vector2(0.096641004, 0.12770323)
 
 [node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1870745884]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_2fcgv")
+texture = ExtResource("2_2fcgv")
 
 [node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1656711474]
 layout_mode = 2
-texture = ExtResource("3_c7xwe")
+texture = ExtResource("2_2fcgv")
 
 [node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1354680058]
 layout_mode = 2
-texture = ExtResource("3_c7xwe")
+texture = ExtResource("2_2fcgv")
 
 [node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=2120948853]
 layout_mode = 2
-texture = ExtResource("3_c7xwe")
+texture = ExtResource("2_2fcgv")
 
 [node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=310234251]
 layout_mode = 2
-texture = ExtResource("3_c7xwe")
+texture = ExtResource("2_2fcgv")
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1520688575]
-offset_left = 664.0
-offset_top = 56.000008
-offset_right = 694.8449
-offset_bottom = 81.74293
+offset_left = 651.0
+offset_top = 109.0
+offset_right = 678.1708
+offset_bottom = 134.74292
 scale = Vector2(2.5287802, 1.9989492)
-theme_override_colors/default_color = Color(0.98234254, 0.9823423, 0.9823424, 1)
-theme_override_constants/outline_size = 13
-theme_override_font_sizes/normal_font_size = 20
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 17
 text = "0.0"
 scroll_active = false
+script = ExtResource("3_qnqh0")
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=995252443]
 offset_left = 460.0

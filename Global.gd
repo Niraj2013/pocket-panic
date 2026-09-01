@@ -1,4 +1,5 @@
 extends Node
 
-var minigames_done=0
-var lives=5
+var lives: int = 5
+var minigames_done: int = 0
+var score: int = 0

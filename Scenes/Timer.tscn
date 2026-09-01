@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0ums2lr6ccr5"]
+
+[node name="Timer" type="Node2D" unique_id=1973102455]
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=1968279753]
+offset_left = 574.99994
+offset_top = 116.00001
+offset_right = 636.68976
+offset_bottom = 172.52971
+scale = Vector2(2.5287802, 1.9989492)
+theme_override_colors/default_color = Color(0.98586935, 0.98586947, 0.98586935, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/normal_font_size = 40
+text = "0.0"
+scroll_active = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7d47rqwm06iw"
-path="res://.godot/imported/Lives.jpeg-ce9208ae9442a15deda61f7564d61c79.ctex"
+uid="uid://c4mmangotsnjs"
+path="res://.godot/imported/Paper.png-df09be0e4909a2b8ede268589b461227.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Lives.jpeg"
-dest_files=["res://.godot/imported/Lives.jpeg-ce9208ae9442a15deda61f7564d61c79.ctex"]
+source_file="res://Paper.png"
+dest_files=["res://.godot/imported/Paper.png-df09be0e4909a2b8ede268589b461227.ctex"]
 
 [params]
 

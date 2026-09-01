@@ -1,51 +1,57 @@
 extends Node2D
-@onready var Heart_container: HBoxContainer = $HeartContainer
-@onready var Heart: TextureRect = $HeartContainer/Heart
-@onready var Heart_2: TextureRect = $HeartContainer/Heart2
-@onready var Heart_3: TextureRect = $HeartContainer/Heart3
-@onready var Heart_4: TextureRect = $HeartContainer/Heart4
-@onready var Heart_5: TextureRect = $HeartContainer/Heart5
-@onready var Level: RichTextLabel = $Level
-@onready var Timer: RichTextLabel = $Timer
 
-var time
+@onready var heart_container: HBoxContainer = $HeartContainer
+@onready var heart: TextureRect = $HeartContainer/Heart
+@onready var heart_2: TextureRect = $HeartContainer/Heart2
+@onready var heart_3: TextureRect = $HeartContainer/Heart3
+@onready var heart_4: TextureRect = $HeartContainer/Heart4
+@onready var heart_5: TextureRect = $HeartContainer/Heart5
+@onready var level: RichTextLabel = $Level
+@onready var timer_label: RichTextLabel = $Timer
+
+var time: float = 5.0
+
+
 func _ready() -> void:
-	await Timer(5.0)
+	start_timer(5.0)
+
 	if Global.minigames_done < 3:
-		Global.minigames_done = Global.minigames_done +1
-		get_tree().change_scene_to_file("res://Scenes/minigame_" + str(Global.minigames_done) + ".tscn")
-		
-		else:
-			get_tree().change_scene_to_file("res//Scenes/title_scene.tscn")
-			
-func _process(delta: float) -> void:
+		Global.minigames_done += 1
+		get_tree().change_scene_to_file(
+			"res://Scenes/minigame_" + str(Global.minigames_done) + ".tscn"
+		)
+	else:
+		get_tree().change_scene_to_file("res://Scenes/title_scene.tscn")
+
+
+func _process(_delta: float) -> void:
 	match Global.lives:
-		
+		5:
+			pass
 		4:
-			Heart.hide()
+			heart.hide()
 		3:
-			Heart.hide()
-			Heart_2.hide()
+			heart.hide()
+			heart_2.hide()
 		2:
-			Heart.hide()
-			Heart_2.hide()
-			Heart_3.hide()
+			heart.hide()
+			heart_2.hide()
+			heart_3.hide()
 		1:
-			Heart.hide()
-			Heart_2.hide()
-			Heart_3.hide()
-			Heart_4.hide()
+			heart.hide()
+			heart_2.hide()
+			heart_3.hide()
+			heart_4.hide()
 		0:
-			Heart_container.hide()
-	timer.text = str(time)
-	level.text = "Level" + str(Global.minigames_done)
-funct Timer(start_time: float):
+			heart_container.hide()
+
+	timer_label.text = str(ceil(time))
+	level.text = "Level " + str(Global.minigames_done)
+
+
+func start_timer(start_time: float) -> void:
 	time = start_time
-	
+
 	while time > 0.0:
-		await wait(0.1)
-		time-=0.1
-		
-	return
-func wait(second:float) -> void:
-	await get_tree().create_timer(seconds).timeout
+		await get_tree().create_timer(0.1).timeout
+		time -= 0.1
