@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://41abeo3uhmnj" path="res://Lives.png" id="3_f6tb2"]
 [ext_resource type="Script" uid="uid://dl03ldlycnjd7" path="res://Heart_script.gd" id="4_0uv5o"]
 [ext_resource type="PackedScene" uid="uid://b0ums2lr6ccr5" path="res://Scenes/Timer.tscn" id="6_0uv5o"]
-[ext_resource type="Script" uid="uid://ixvkki5hoabb" path="res://Scenes/timer.gd" id="7_ojqsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q3kn"]
 size = Vector2(686, 52.5)
@@ -55,6 +54,7 @@ script = ExtResource("1_5txvl")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1621960323]
 scale = Vector2(28.736433, -13.538854)
+scroll_offset = Vector2(16, 0)
 
 [node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1597512005]
 offset_left = -0.27839226
@@ -235,5 +235,4 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("CircleShape2D_0q3kn")
 
 [node name="Timer" parent="." unique_id=1973102455 instance=ExtResource("6_0uv5o")]
-position = Vector2(13, -38)
-script = ExtResource("7_ojqsy")
+position = Vector2(-469, -44)

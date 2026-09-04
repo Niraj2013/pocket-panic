@@ -1,6 +1,6 @@
 extends TextureButton
 @onready var parent = $".."
 
-func _process(_delta: float) -> void:
+func _pressed() -> void:
 	hide()
 	parent.buttons_pressed += 1

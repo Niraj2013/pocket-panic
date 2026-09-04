@@ -1,22 +1,29 @@
 extends Node2D
+
 @onready var timer: Node2D = $Timer
 
 var buttons_pressed := 0
 var timer_end = false
+var game_finished = false  # Lock variable
 
 func _ready() -> void:
-		await timer.Timer(7.0)
+	await timer.Timer(7.0)
+	if not game_finished:
 		timer_end = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-		if buttons_pressed == 4:
-				if Global.minigames_done > 3:
-					get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
-				else:
-					get_tree().change_scene_to_file("res://Scenes/Timer.tscn")
+	if game_finished:
+		return
+
+	# WIN CONDITION: Player pressed 4 buttons
+	if buttons_pressed >= 4:
+		game_finished = true
+		Global.lives += 1
+		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
 					
-		if timer_end:
-				Global.lives -= 1
-				Global.minigames_done -=1
-				get_tree().change_scene_to_file("res://Scenes/Timer.tscn")
+	# LOSS CONDITION: Time expired
+	if timer_end:
+		game_finished = true
+		Global.minigames_done -= 1  # Adds exactly 1
+		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
+		return

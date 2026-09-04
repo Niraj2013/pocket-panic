@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ccd2lhikdjjy0"]
+
+[ext_resource type="Script" uid="uid://ibl4knksy1y" path="res://Scenes/death_scene.gd" id="1_1s3mq"]
+[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="2_w30ie"]
+
+[node name="DeathScene" type="Node2D" unique_id=775809260]
+script = ExtResource("1_1s3mq")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=183783910]
+scale = Vector2(28.736433, -13.538854)
+scroll_offset = Vector2(16, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1951344810]
+offset_left = -0.27839226
+offset_top = -1.2556455
+offset_right = 1.1142263
+offset_bottom = 2.2740774
+scale = Vector2(28.736433, -13.538854)
+texture = ExtResource("2_w30ie")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=494996746]
+offset_left = 301.0
+offset_top = 261.0
+offset_right = 857.0
+offset_bottom = 450.0
+theme_override_colors/default_color = Color(0.83256316, 0, 0.033946235, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/normal_font_size = 91
+text = "GAME OVER!"
+
+[node name="RestartButton" type="Button" parent="RichTextLabel" unique_id=1001733736]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 125.0
+offset_right = 442.0
+offset_bottom = 196.0
+scale = Vector2(0.8549323, 0.8736463)
+theme_override_colors/font_color = Color(0.06742939, 0.8644635, 1.540184e-06, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 35
+text = "Click to Restart"
+
+[connection signal="pressed" from="RichTextLabel/RestartButton" to="." method="_on_restart_button_pressed"]

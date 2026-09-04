@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://41abeo3uhmnj" path="res://Lives.png" id="3_c7xwe"]
 [ext_resource type="Script" uid="uid://cn6vae8fvlxms" path="res://Scenes/timer_screen.gd" id="3_qnqh0"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fcgv"]
-
 [node name="LevelScene" type="Node2D" unique_id=1281737210]
 script = ExtResource("3_qnqh0")
 
@@ -18,15 +16,15 @@ scale = Vector2(0.83663774, 0.844721)
 texture = ExtResource("1_c7xwe")
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=110578155]
-offset_left = 187.0
-offset_top = 48.00003
-offset_right = 3404.8726
-offset_bottom = 405.00003
-scale = Vector2(0.096641004, 0.12770323)
+offset_left = 249.00005
+offset_top = 214.0
+offset_right = 3466.8726
+offset_bottom = 571.0
+scale = Vector2(0.20567186, 0.28112352)
 
-[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1870745884]
+[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1498809885]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_2fcgv")
+texture = ExtResource("3_c7xwe")
 
 [node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1656711474]
 layout_mode = 2
@@ -45,11 +43,11 @@ layout_mode = 2
 texture = ExtResource("3_c7xwe")
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1520688575]
-offset_left = 664.0
-offset_top = 56.000008
-offset_right = 694.8449
-offset_bottom = 81.74293
-scale = Vector2(2.5287802, 1.9989492)
+offset_left = 477.0
+offset_top = 418.99997
+offset_right = 507.8449
+offset_bottom = 444.7429
+scale = Vector2(5.9177647, 3.879386)
 theme_override_colors/default_color = Color(0.98234254, 0.9823423, 0.9823424, 1)
 theme_override_constants/outline_size = 13
 theme_override_font_sizes/normal_font_size = 20
@@ -57,11 +55,11 @@ text = "0.0"
 scroll_active = false
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=995252443]
-offset_left = 460.0
-offset_top = 111.00001
-offset_right = 520.26404
-offset_bottom = 139.52759
-scale = Vector2(1.990379, 1.5222833)
+offset_left = 475.00003
+offset_top = 331.00003
+offset_right = 535.26404
+offset_bottom = 359.52762
+scale = Vector2(3.4903085, 2.781023)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 17

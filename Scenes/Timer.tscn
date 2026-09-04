@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://b0ums2lr6ccr5"]
 
+[ext_resource type="Script" uid="uid://ixvkki5hoabb" path="res://Scenes/timer.gd" id="1_notwg"]
+
 [node name="Timer" type="Node2D" unique_id=1973102455]
+script = ExtResource("1_notwg")
 
 [node name="timer" type="RichTextLabel" parent="." unique_id=1968279753]
-offset_left = 574.99994
+offset_left = 522.0
 offset_top = 116.00001
-offset_right = 636.68976
+offset_right = 596.7396
 offset_bottom = 172.52971
 scale = Vector2(2.5287802, 1.9989492)
 theme_override_colors/default_color = Color(0.98586935, 0.98586947, 0.98586935, 1)
 theme_override_constants/outline_size = 17
 theme_override_font_sizes/normal_font_size = 40
-text = "0.0"
+text = " 0.0"
 scroll_active = false
