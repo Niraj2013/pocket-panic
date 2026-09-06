@@ -1,34 +1,39 @@
-Pocket Panic!!
-Pocket Panic is a game with 2 minigames in it.
-Minigames:
-  1.Platformer Game: Here using you have to collect all the hearts to complete the game. Simple!!!
-  2.Clicker Game: Here you have to click on all the hearts to collect them.
+PocketPanic
+Pocket Panic is a fun arcade game with 2 fast mini-games where you have to beat a 5-second timer.
 
-In both the games you will behaving a time limit to complete it.
+Try it in your web browser here: https://noben-nobi.itch.io/pocketpanic
+
+Quick Start:
+Just open the Itch.io link, click the start button on the main menu, and get ready to play fast!
+
+Features:
+- Mini-game 1 (Platformer): You control a character using your keyboard to run around a grid map and collect all the hearts before the 5-second timer hits zero.
+- Mini-game 2 (Clicker): Hearts float around the screen and you have to quickly click or touch them all before your time runs out.
+- Lives System: You start the game with a total of 5 lives. Every time you fail a game, one of the heart icons on the screen disappears.
+- Live Timer: A fast-ticking countdown timer shows up on the screen so you can see exactly how many seconds you have left to win.
+- Paper Theme: The entire look of the game is inspired by handmade crafts, using textures like cardboard, drawings, paper cuts, and paint splotches.
+
+How to run it locally:
+1. Download and open the free Godot 4 engine on your computer.
+2. Download this project folder from GitHub.
+3. Import the folder into Godot and open the project.godot file.
+4. Press the F6 key on your keyboard to test and play the scenes.
+
+How it works:
+The game is split into simple, separate scenes inside Godot so that the games run one after the other. A simple global script keeps track of your total score and how many lives you have left, so the game knows when to send you to the win screen or the death screen.
 
 Controls:
-  You can control the game using Arrow keys to move front, back, left and right, and Space Bar to make it jump.
-  clicking can be done using arrows or hands/touch(if playing in mobile)
+- Arrow keys to move your character front, back, left, and right.
+- Space Bar to make your character jump.
+- Mouse left-click or hand touch clicks to grab hearts in the clicker levels.
 
-UI:
-  The UI is inspired by Paper, paints, and other.
-
-Character/Player:
-  The Character is a paper and human combination!
-
-Title Scene:
-  It only has a start game, click it and staaart!
-
-Level Scene:
-  It has a waiting time timer so that you will get ready for winning the wonderful minigame!
-  It also shows hearts (your remaining lives) There are 5 lives.
-
-Winner Scene:
-  If you see this scene then you are a true champion!
-
-Death Scene:
-  Pray that you don't see this scene, this scene indicates you don't have any lives left and you are dead (you are seeing this from Heaven) but you get another chance to start you life, I mean the game and win the minigames.
-
-Now you are all set! Play the game and enjoy!
-Oh! one thing left to say, play the game in your browser using:
-  https://noben-nobi.itch.io/pocketpanic
+Scenes in the Game:
+- Title Scene: The main menu screen with a simple start button.
+- Level Scene: The playing area that shows your 5 hearts, the timer, and the current mini-game.
+- Winner Scene: A screen that shows up to congratulate you if you beat the games.
+- Death Scene: A screen that shows up if you lose all 5 lives, giving you a quick restart button to try the game again.
+<img width="556" height="312" alt="Screenshot 2026-09-06 123304" src="https://github.com/user-attachments/assets/f0491188-fc42-4104-886c-8701fd0b741d" />
+<img width="666" height="376" alt="Screenshot 2026-09-06 123251" src="https://github.com/user-attachments/assets/77e23993-ab7c-4fa2-9beb-38df3883e9c4" />
+<img width="797" height="433" alt="Screenshot 2026-09-06 123316" src="https://github.com/user-attachments/assets/db4135ef-c2d4-4b69-a96e-413d65690faa" />
+Credits:
+Made by Me (Niraj Gundecha) using the free Godot 4 game engine and helped by @nonchalant ava.
