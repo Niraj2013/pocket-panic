@@ -1,18 +1,37 @@
 [gd_scene format=3 uid="uid://b0ums2lr6ccr5"]
 
-[ext_resource type="Script" uid="uid://ixvkki5hoabb" path="res://Scenes/timer.gd" id="1_notwg"]
+[ext_resource type="Script" uid="uid://b37k71uwqbjnp" path="res://Scenes/winner_scene.gd" id="1_mdnnd"]
+[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="2_37beg"]
 
-[node name="Timer" type="Node2D" unique_id=1973102455]
-script = ExtResource("1_notwg")
+[node name="WinnerScene" type="Node2D" unique_id=1499636859]
+script = ExtResource("1_mdnnd")
 
-[node name="timer" type="RichTextLabel" parent="." unique_id=1968279753]
-offset_left = 522.0
-offset_top = 116.00001
-offset_right = 596.7396
-offset_bottom = 172.52971
-scale = Vector2(2.5287802, 1.9989492)
-theme_override_colors/default_color = Color(0.98586935, 0.98586947, 0.98586935, 1)
-theme_override_constants/outline_size = 17
-theme_override_font_sizes/normal_font_size = 40
-text = " 0.0"
-scroll_active = false
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=603335546]
+scale = Vector2(0.83563566, 0.84273636)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1893915189]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_37beg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1942657194]
+offset_left = 307.0
+offset_top = 194.0
+offset_right = 827.0
+offset_bottom = 346.0
+theme_override_colors/default_color = Color(0.58040243, 0.70079964, 0.2698103, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 107
+text = "YOU WIN!"
+
+[node name="play_again_button" type="Button" parent="." unique_id=201633282]
+offset_left = 454.0
+offset_top = 355.0
+offset_right = 672.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.5129433, 0.9999997, 0.59586424, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Play Again!"
+
+[connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]

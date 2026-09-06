@@ -18,12 +18,17 @@ func _process(_delta: float) -> void:
 	# WIN CONDITION: Player pressed 4 buttons
 	if buttons_pressed >= 4:
 		game_finished = true
-		Global.lives += 1
+		#Global.lives += 1
 		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
 					
 	# LOSS CONDITION: Time expired
 	if timer_end:
 		game_finished = true
-		Global.minigames_done -= 1  # Adds exactly 1
-		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
-		return
+		
+		if Global.lives == 0:
+			get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
+		else:
+			Global.lives -= 1
+			Global.minigames_done -= 1  # Adds exactly 1
+			get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
+			return

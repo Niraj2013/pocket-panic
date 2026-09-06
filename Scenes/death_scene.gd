@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var restart_button: Button = $RestartButton
+@onready var restart_button: Button = $restart_button
 
 func _ready() -> void:
 	# Connect the restart button signal
