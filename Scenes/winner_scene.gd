@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	pass
+	
 func _on_play_again_button_pressed() -> void:
 	# Reset global state for a fresh run
 	Global.lives = 5

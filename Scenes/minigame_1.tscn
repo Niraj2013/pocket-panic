@@ -1,37 +1,238 @@
 [gd_scene format=3 uid="uid://bnj0fqst0whi1"]
 
-[ext_resource type="Script" uid="uid://b37k71uwqbjnp" path="res://Scenes/winner_scene.gd" id="1_11mgy"]
-[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="2_f6tb2"]
+[ext_resource type="Script" uid="uid://c86evrj8jc2wy" path="res://Scenes/minigame_1.gd" id="1_5txvl"]
+[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="1_11mgy"]
+[ext_resource type="PackedScene" uid="uid://c6rb5x4o4t7gt" path="res://Scenes/Player.tscn" id="2_f6tb2"]
+[ext_resource type="Texture2D" uid="uid://41abeo3uhmnj" path="res://Lives.png" id="3_f6tb2"]
+[ext_resource type="Script" uid="uid://dl03ldlycnjd7" path="res://Heart_script.gd" id="4_0uv5o"]
+[ext_resource type="PackedScene" uid="uid://b0ums2lr6ccr5" path="res://Scenes/Timer.tscn" id="6_0uv5o"]
 
-[node name="WinnerScene" type="Node2D" unique_id=1499636859]
-script = ExtResource("1_11mgy")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q3kn"]
+size = Vector2(686, 52.5)
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=603335546]
-scale = Vector2(0.83563566, 0.84273636)
+[sub_resource type="Animation" id="Animation_o6yob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-137.73387, 55.432133)]
+}
 
-[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1893915189]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_f6tb2")
+[sub_resource type="Animation" id="Animation_5txvl"]
+resource_name = "floating"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-137.73387, 55.432133), Vector2(-137.73387, -18.477627)]
+}
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1942657194]
-offset_left = 307.0
-offset_top = 194.0
-offset_right = 827.0
-offset_bottom = 346.0
-theme_override_colors/default_color = Color(0.58040243, 0.70079964, 0.2698103, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/normal_font_size = 107
-text = "YOU WIN!"
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uv5o"]
+_data = {
+&"RESET": SubResource("Animation_o6yob"),
+&"floating": SubResource("Animation_5txvl")
+}
 
-[node name="play_again_button" type="Button" parent="." unique_id=201633282]
-offset_left = 454.0
-offset_top = 355.0
-offset_right = 672.0
-offset_bottom = 421.0
-theme_override_colors/font_color = Color(0.5129433, 0.9999997, 0.59586424, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 40
-text = "Play Again!"
+[sub_resource type="CircleShape2D" id="CircleShape2D_0q3kn"]
 
-[connection signal="pressed" from="play_again_button" to="." method="_on_play_again_button_pressed"]
+[node name="Minigame1" type="Node2D" unique_id=1064617476]
+script = ExtResource("1_5txvl")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1621960323]
+scale = Vector2(28.736433, -13.538854)
+scroll_offset = Vector2(16, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1597512005]
+offset_left = -0.27839226
+offset_top = -1.2556455
+offset_right = 1.1142263
+offset_bottom = 2.2740774
+scale = Vector2(28.736433, -13.538854)
+texture = ExtResource("1_11mgy")
+expand_mode = 1
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=1426319798]
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1176379887]
+offset_left = 233.99998
+offset_top = 502.0
+offset_right = 257.89352
+offset_bottom = 505.39838
+scale = Vector2(28.710676, 16.037546)
+color = Color(0.9927282, 0.7914275, 0.63033813, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=47406888]
+position = Vector2(575, 527.75)
+shape = SubResource("RectangleShape2D_0q3kn")
+
+[node name="Platform2" type="StaticBody2D" parent="Platform1" unique_id=1532846712]
+position = Vector2(413.00003, 95)
+scale = Vector2(0.4123221, 0.5723235)
+
+[node name="ColorRect" type="ColorRect" parent="Platform1/Platform2" unique_id=1033809331]
+offset_left = 233.99998
+offset_top = 502.0
+offset_right = 257.89352
+offset_bottom = 505.39838
+scale = Vector2(28.710676, 16.037546)
+color = Color(0.9927282, 0.7914275, 0.63033813, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1/Platform2" unique_id=1746105975]
+position = Vector2(575, 527.75)
+shape = SubResource("RectangleShape2D_0q3kn")
+
+[node name="Platform3" type="StaticBody2D" parent="Platform1" unique_id=14944509]
+position = Vector2(639, 25)
+scale = Vector2(0.25944182, 0.5367884)
+
+[node name="ColorRect" type="ColorRect" parent="Platform1/Platform3" unique_id=1321391673]
+offset_left = 233.99998
+offset_top = 502.0
+offset_right = 257.89352
+offset_bottom = 505.39838
+scale = Vector2(28.710676, 16.037546)
+color = Color(0.9927282, 0.7914275, 0.63033813, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1/Platform3" unique_id=1636581626]
+position = Vector2(575, 527.75)
+shape = SubResource("RectangleShape2D_0q3kn")
+
+[node name="Platform4" type="StaticBody2D" parent="Platform1" unique_id=986324536]
+position = Vector2(370, -41)
+scale = Vector2(0.25944182, 0.5367884)
+
+[node name="ColorRect" type="ColorRect" parent="Platform1/Platform4" unique_id=1832363945]
+offset_left = 233.99998
+offset_top = 502.0
+offset_right = 257.89352
+offset_bottom = 505.39838
+scale = Vector2(28.710676, 16.037546)
+color = Color(0.9927282, 0.7914275, 0.63033813, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1/Platform4" unique_id=631792761]
+position = Vector2(575, 527.75)
+shape = SubResource("RectangleShape2D_0q3kn")
+
+[node name="Player" parent="." unique_id=818910489 instance=ExtResource("2_f6tb2")]
+position = Vector2(302, 469)
+
+[node name="Heart" type="Node2D" parent="." unique_id=142471294]
+position = Vector2(560.00006, 300)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_0uv5o")
+
+[node name="Heart" type="TextureRect" parent="Heart" unique_id=1229682451]
+offset_left = -137.73387
+offset_top = 55.432133
+offset_right = 5249.02
+offset_bottom = 2179.7974
+scale = Vector2(0.13068636, 0.16236015)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart" unique_id=520578783]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart" unique_id=2104482977]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart/Area2D" unique_id=188563876]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart2" type="Node2D" parent="." unique_id=2052065668]
+position = Vector2(658, 173.99998)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_0uv5o")
+
+[node name="Heart" type="TextureRect" parent="Heart2" unique_id=1998497264]
+offset_left = -137.73387
+offset_top = 55.432133
+offset_right = 5249.02
+offset_bottom = 2179.7974
+scale = Vector2(0.13068636, 0.16236015)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart2" unique_id=1696607256]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart2" unique_id=533494846]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart2/Area2D" unique_id=2121518515]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart3" type="Node2D" parent="." unique_id=873272994]
+position = Vector2(830, 223)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_0uv5o")
+
+[node name="Heart" type="TextureRect" parent="Heart3" unique_id=1887265407]
+offset_left = -137.73387
+offset_top = 55.432133
+offset_right = 5249.02
+offset_bottom = 2179.7974
+scale = Vector2(0.13068636, 0.16236015)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart3" unique_id=1774070563]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart3" unique_id=1826318340]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart3/Area2D" unique_id=764163985]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart4" type="Node2D" parent="." unique_id=1685483986]
+position = Vector2(395, 142)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_0uv5o")
+
+[node name="Heart" type="TextureRect" parent="Heart4" unique_id=610012583]
+offset_left = -137.73387
+offset_top = 55.432133
+offset_right = 5249.02
+offset_bottom = 2179.7974
+scale = Vector2(0.13068636, 0.16236015)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart4" unique_id=1246912347]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart4" unique_id=1167470287]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart4/Area2D" unique_id=612367972]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Timer" parent="." unique_id=1973102455 instance=ExtResource("6_0uv5o")]
+position = Vector2(-469, -44)
