@@ -7,8 +7,11 @@ Quick Start:
 Just open the Itch.io link, click the start button on the main menu, and get ready to play fast!
 
 Features:
-- Mini-game 1 (Platformer): You control a character using your keyboard to run around a grid map and collect all the hearts before the 5-second timer hits zero.
+- Mini-game 1 (Platformer): You control a character using your keyboard to run around a grid map and collect all the hearts before the timer hits zero.
 - Mini-game 2 (Clicker): Hearts float around the screen and you have to quickly click or touch them all before your time runs out.
+- Mini-game 3 (Dodge 2!): Rocks fall anywhere randomly and you have have to dodge it, don't touch it or else you die (means your lives get reduced).
+- Mini-game 4 (collect it!): Balloons are falling from the air and you have to collect 4 balloons under 7 seconds.
+- Mini-game 5 (Platformer impossible version): This is also a platformer game but impossible version as it has cones everwhere and without touching them you have to collect all the heartsunderthe given time.
 - Lives System: You start the game with a total of 5 lives. Every time you fail a game, one of the heart icons on the screen disappears.
 - Live Timer: A fast-ticking countdown timer shows up on the screen so you can see exactly how many seconds you have left to win.
 - Paper Theme: The entire look of the game is inspired by handmade crafts, using textures like cardboard, drawings, paper cuts, and paint splotches.
