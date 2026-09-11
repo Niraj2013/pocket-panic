@@ -38,5 +38,9 @@ Scenes in the Game:
 <img width="556" height="312" alt="Screenshot 2026-09-06 123304" src="https://github.com/user-attachments/assets/f0491188-fc42-4104-886c-8701fd0b741d" />
 <img width="666" height="376" alt="Screenshot 2026-09-06 123251" src="https://github.com/user-attachments/assets/77e23993-ab7c-4fa2-9beb-38df3883e9c4" />
 <img width="797" height="433" alt="Screenshot 2026-09-06 123316" src="https://github.com/user-attachments/assets/db4135ef-c2d4-4b69-a96e-413d65690faa" />
+<img width="925" height="528" alt="Screenshot 2026-09-08 210448" src="https://github.com/user-attachments/assets/09eaf0b4-8f86-4d44-a9e6-c347d0262c3e" />
+<img width="923" height="517" alt="Screenshot 2026-09-10 170637" src="https://github.com/user-attachments/assets/35b875d3-32c3-4af6-ba57-0fe82e1e121b" />
+<img width="926" height="520" alt="Screenshot 2026-09-10 205154" src="https://github.com/user-attachments/assets/0df083b7-d4f9-4fc3-8aaa-e716fe4c1a80" />
+
 Credits:
 Made by Me (Niraj Gundecha) using the free Godot 4 game engine and helped by @nonchalant ava.
