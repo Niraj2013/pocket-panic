@@ -15,7 +15,7 @@ var time: float = 5.0
 func _ready() -> void:
 	await start_timer(5.0)
 
-	if Global.minigames_done < 2:
+	if Global.minigames_done < 5:
 		Global.minigames_done += 1 
 		get_tree().change_scene_to_file(
 			"res://Scenes/minigame_" + str(Global.minigames_done) + ".tscn"
@@ -51,7 +51,7 @@ func _process(_delta: float) -> void:
 	if Global.lives == 0:
 		get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")
 		
-	if Global.minigames_done >= 2:
+	if Global.minigames_done >= 5:
 		get_tree().change_scene_to_file("res://Scenes/winner_scene.tscn")
 
 func start_timer(start_time: float) -> void:

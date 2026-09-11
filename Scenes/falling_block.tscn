@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b32cp7eiifw2r"]
+
+[ext_resource type="Texture2D" uid="uid://bu8jmumqmdlrt" path="res://Brick.jpg" id="1_27sxd"]
+[ext_resource type="Script" uid="uid://cmmd2262igus4" path="res://Scenes/falling_block.gd" id="1_374re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q3kn"]
+size = Vector2(100.5, 55)
+
+[node name="FallingBlock" type="Node2D" unique_id=1834059260]
+script = ExtResource("1_374re")
+
+[node name="FallingBlock" type="Area2D" parent="." unique_id=1899896917]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingBlock" unique_id=1553971189]
+position = Vector2(51.75, 27.5)
+shape = SubResource("RectangleShape2D_0q3kn")
+
+[node name="Sprite2D" type="Sprite2D" parent="FallingBlock" unique_id=1888619873]
+position = Vector2(51.5, 27.5)
+scale = Vector2(1.4428573, 1.8965516)
+texture = ExtResource("1_27sxd")
+
+[connection signal="body_entered" from="FallingBlock" to="." method="_on_body_entered"]

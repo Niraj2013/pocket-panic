@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bxs7l37nn7bo3"]
+
+[ext_resource type="Script" uid="uid://bj15uhys5vega" path="res://Scenes/minigame_3.gd" id="1_ihkhm"]
+[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="2_we0jk"]
+[ext_resource type="PackedScene" uid="uid://c6rb5x4o4t7gt" path="res://Scenes/Player.tscn" id="3_6sdpr"]
+[ext_resource type="PackedScene" uid="uid://b0ums2lr6ccr5" path="res://Scenes/Timer.tscn" id="4_we0jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr4ld"]
+size = Vector2(686, 52.5)
+
+[node name="Minigame3" type="Node2D" unique_id=2079789957]
+script = ExtResource("1_ihkhm")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2017066458]
+scale = Vector2(0.83563566, 0.84273636)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=765888310]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_we0jk")
+
+[node name="Player" parent="." unique_id=818910489 instance=ExtResource("3_6sdpr")]
+position = Vector2(302, 469)
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=838179639]
+position = Vector2(-2.0000038, 13)
+scale = Vector2(1.0030242, 0.9667192)
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=908225816]
+offset_left = 233.99998
+offset_top = 502.0
+offset_right = 257.89352
+offset_bottom = 505.39838
+scale = Vector2(28.710676, 16.037546)
+color = Color(0.9927282, 0.7914275, 0.63033813, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1650946127]
+position = Vector2(575, 527.7501)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_lr4ld")
+
+[node name="Timer" parent="." unique_id=1973102455 instance=ExtResource("4_we0jk")]
+position = Vector2(-469, -44)

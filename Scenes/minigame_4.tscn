@@ -1,0 +1,280 @@
+[gd_scene format=3 uid="uid://b28erkspm843m"]
+
+[ext_resource type="Script" uid="uid://ce41gl1l1ph3s" path="res://Scenes/minigame_4.gd" id="1_lrixb"]
+[ext_resource type="Texture2D" uid="uid://3mmaai8kf47y" path="res://Background.png" id="2_xea2i"]
+[ext_resource type="PackedScene" uid="uid://c6rb5x4o4t7gt" path="res://Scenes/Player.tscn" id="3_ake4f"]
+[ext_resource type="PackedScene" uid="uid://b0ums2lr6ccr5" path="res://Scenes/Timer.tscn" id="4_57wpc"]
+[ext_resource type="Script" uid="uid://dlysb6sakiyd1" path="res://Scenes/balloons.gd" id="4_xea2i"]
+[ext_resource type="Texture2D" uid="uid://do7tvx5s8onae" path="res://balloon.png" id="5_xea2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q3kn"]
+size = Vector2(686, 52.5)
+
+[sub_resource type="Animation" id="Animation_o6yob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-137.73387, 55.432133)]
+}
+
+[sub_resource type="Animation" id="Animation_5txvl"]
+resource_name = "floating"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-137.73387, 55.432133), Vector2(-137.73387, -18.477627)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uv5o"]
+_data = {
+&"RESET": SubResource("Animation_o6yob"),
+&"floating": SubResource("Animation_5txvl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0q3kn"]
+
+[node name="Minigame4" type="Node2D" unique_id=1064617476]
+position = Vector2(-11, -12)
+script = ExtResource("1_lrixb")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1621960323]
+scale = Vector2(28.736433, -13.538854)
+scroll_offset = Vector2(16, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1597512005]
+offset_left = -0.27839226
+offset_top = -1.2556455
+offset_right = 1.1142263
+offset_bottom = 2.2740774
+scale = Vector2(28.736433, -13.538854)
+texture = ExtResource("2_xea2i")
+expand_mode = 1
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=1426319798]
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1176379887]
+offset_left = 233.99998
+offset_top = 502.0
+offset_right = 257.89352
+offset_bottom = 505.39838
+scale = Vector2(28.710676, 16.037546)
+color = Color(0.9927282, 0.7914275, 0.63033813, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=47406888]
+position = Vector2(575, 527.75)
+shape = SubResource("RectangleShape2D_0q3kn")
+
+[node name="Player" parent="." unique_id=818910489 instance=ExtResource("3_ake4f")]
+position = Vector2(302, 469)
+
+[node name="Heart" type="Node2D" parent="." unique_id=142471294]
+position = Vector2(766, -1024)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_xea2i")
+
+[node name="Heart" type="TextureRect" parent="Heart" unique_id=1229682451]
+offset_left = -306.07678
+offset_top = -36.954884
+offset_right = 5080.6772
+offset_bottom = 2087.4104
+scale = Vector2(0.19828281, 0.24396977)
+texture = ExtResource("5_xea2i")
+
+[node name="animation" type="AnimationPlayer" parent="Heart" unique_id=520578783]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart" unique_id=2104482977]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart/Area2D" unique_id=188563876]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart2" type="Node2D" parent="." unique_id=1682725370]
+position = Vector2(583, -384)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_xea2i")
+
+[node name="Heart" type="TextureRect" parent="Heart2" unique_id=187062039]
+offset_left = -306.07678
+offset_top = -36.954884
+offset_right = 5080.6772
+offset_bottom = 2087.4104
+scale = Vector2(0.19828281, 0.24396977)
+texture = ExtResource("5_xea2i")
+
+[node name="animation" type="AnimationPlayer" parent="Heart2" unique_id=1118795236]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart2" unique_id=1599500480]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart2/Area2D" unique_id=2049890060]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart3" type="Node2D" parent="." unique_id=353814188]
+position = Vector2(516.99994, -779.99994)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_xea2i")
+
+[node name="Heart" type="TextureRect" parent="Heart3" unique_id=892014393]
+offset_left = -306.07678
+offset_top = -36.954884
+offset_right = 5080.6772
+offset_bottom = 2087.4104
+scale = Vector2(0.19828281, 0.24396977)
+texture = ExtResource("5_xea2i")
+
+[node name="animation" type="AnimationPlayer" parent="Heart3" unique_id=1273158594]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart3" unique_id=940527611]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart3/Area2D" unique_id=1828186294]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart4" type="Node2D" parent="." unique_id=1999168019]
+position = Vector2(847, -169)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_xea2i")
+
+[node name="Heart" type="TextureRect" parent="Heart4" unique_id=541654284]
+offset_left = -306.07678
+offset_top = -36.954884
+offset_right = 5080.6772
+offset_bottom = 2087.4104
+scale = Vector2(0.19828281, 0.24396977)
+texture = ExtResource("5_xea2i")
+
+[node name="animation" type="AnimationPlayer" parent="Heart4" unique_id=1706478073]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart4" unique_id=829869074]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart4/Area2D" unique_id=2040991577]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart5" type="Node2D" parent="." unique_id=1950409337]
+position = Vector2(305, -452)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_xea2i")
+
+[node name="Heart" type="TextureRect" parent="Heart5" unique_id=474962628]
+offset_left = -306.07678
+offset_top = -36.954884
+offset_right = 5080.6772
+offset_bottom = 2087.4104
+scale = Vector2(0.19828281, 0.24396977)
+texture = ExtResource("5_xea2i")
+
+[node name="animation" type="AnimationPlayer" parent="Heart5" unique_id=2061902742]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart5" unique_id=52144217]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart5/Area2D" unique_id=1318461447]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Heart6" type="Node2D" parent="." unique_id=109320265]
+position = Vector2(359.00003, -80.00006)
+scale = Vector2(0.13068636, 0.16236015)
+script = ExtResource("4_xea2i")
+
+[node name="Heart" type="TextureRect" parent="Heart6" unique_id=1864714297]
+offset_left = -306.07678
+offset_top = -36.954884
+offset_right = 5080.6772
+offset_bottom = 2087.4104
+scale = Vector2(0.19828281, 0.24396977)
+texture = ExtResource("5_xea2i")
+
+[node name="animation" type="AnimationPlayer" parent="Heart6" unique_id=2133408637]
+root_node = NodePath("../Heart")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart6" unique_id=618287195]
+position = Vector2(214.25342, 209.41098)
+scale = Vector2(-23.450396, 18.544106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart6/Area2D" unique_id=219970403]
+position = Vector2(0, -3.051758e-05)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_0q3kn")
+
+[node name="Timer" parent="." unique_id=1973102455 instance=ExtResource("4_57wpc")]
+position = Vector2(-469, -44)
+
+[node name="CaughtLabel" type="RichTextLabel" parent="." unique_id=785880582]
+offset_left = 454.0
+offset_top = 126.0
+offset_right = 547.0
+offset_bottom = 167.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 22
+text = "Caught:"
+scroll_active = false
+
+[node name="RemainingLabel" type="RichTextLabel" parent="." unique_id=2127544182]
+offset_left = 452.0
+offset_top = 162.0
+offset_right = 586.0
+offset_bottom = 196.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 22
+text = "Remaining:"
+
+[node name="CaughtCounter" type="RichTextLabel" parent="." unique_id=1331019311]
+offset_left = 544.0
+offset_top = 128.0
+offset_right = 584.0
+offset_bottom = 168.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 22
+text = "0"
+
+[node name="RemainingCounter" type="RichTextLabel" parent="." unique_id=846536936]
+offset_left = 575.0
+offset_top = 164.0
+offset_right = 615.0
+offset_bottom = 204.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 22
+text = "0"
